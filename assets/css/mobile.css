@@ -1,1 +1,80 @@
+/* Base styles for all devices (including desktop) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Mobile Portrait: Phones in portrait orientation (very narrow screens) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Mobile Landscape and small tablets: 481px to 767px */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  body {
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Tablet Portrait: optional if you want to include slightly larger screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+}
+.hide-on-mobile {
+  display: none !important;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+  }
+}
 
