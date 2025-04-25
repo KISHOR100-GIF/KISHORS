@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Verification</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Email Verification</h2>
+  <p>We sent a verification link to your email.</p>
+  <button onclick="verify()">Verify and Continue</button>
+
+  <script>
+    function getEmail() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('email');
+    }
+
+    function verify() {
+      const email = getEmail();
+      if (email) {
+        window.location.href = 'index.html?verified=true&email=' + encodeURIComponent(email);
+      } else {
+        alert("Email not found. Redirecting to login.");
+        window.location.href = 'login.html';
+      }
+    }
+  </script>
+
+</body>
+</html>
