@@ -64,3 +64,44 @@ body {
     margin-bottom: 1rem;
   }
 }
+
+
+
+/* Service grid container */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Service card styling */
+.service-card {
+  background: #1a1a2e;
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive: Mobile layout */
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+
+  .service-card {
+    text-align: center;
+  }
+
+  .service-card img, .service-card svg {
+    display: block;
+    margin: 0 auto 1rem;
+  }
+}
