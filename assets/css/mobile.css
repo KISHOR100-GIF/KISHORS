@@ -1,80 +1,66 @@
-/* Base styles for all devices (including desktop) */
+/* Base styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #333;
 }
 
-/* Mobile Portrait: Phones in portrait orientation (very narrow screens) */
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 16px;
-    padding: 10px;
-  }
+/* Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+}
 
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: #1c1c1c;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+/* Main Content */
+.main-content {
+  flex: 3;
+}
+
+/* Services & Skills grid */
+.service-grid, .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Card styling */
+.card {
+  background: linear-gradient(to right, #1f1f3d, #1a1a2e);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
   .container {
+    flex-direction: column;
     padding: 1rem;
   }
 
-  .navbar {
-    flex-direction: column;
+  .service-grid, .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
     text-align: center;
   }
 
-  .hide-on-mobile {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
+  .sidebar img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
   }
 }
-
-/* Mobile Landscape and small tablets: 481px to 767px */
-@media screen and (min-width: 481px) and (max-width: 767px) {
-  body {
-    font-size: 17px;
-    padding: 15px;
-  }
-
-  .container {
-    padding: 1.5rem;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
-  .mobile-only {
-    display: block;
-  }
-}
-
-/* Tablet Portrait: optional if you want to include slightly larger screens */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  body {
-    font-size: 18px;
-    padding: 20px;
-  }
-
-  .container {
-    padding: 2rem;
-  }
-}
-.hide-on-mobile {
-  display: none !important;
-}
-
-.mobile-only {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .mobile-only {
-    display: block !important;
-  }
-}
-
